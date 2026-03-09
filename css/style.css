@@ -1,0 +1,93 @@
+/* =========================================
+1. VARIABLES & POLICES
+   ========================================= */
+:root {
+    --rose-soft: #f8bbd0;
+    --mauve-soft: #e1bee7;
+    --blue-soft: #bbdefb;
+    --dark-purple: #6a1b9a;
+    --price-pink: #d81b60;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #fdfbfd; /* Un blanc très légèrement rosé */
+    color: #333;
+    /* Correction pour la navbar fixed-top (évite que le menu cache le haut de la page) */
+    padding-top: 70px; 
+}
+
+/* =========================================
+2. TITRES & TEXTES
+   ========================================= */
+h1, h2, h3 {
+    font-weight: 600;
+    color: var(--dark-purple);
+}
+
+.text-custom {
+    color: var(--dark-purple);
+}
+
+.section-title {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+/* Petit trait décoratif sous les titres h2 */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--rose-soft);
+}
+
+/* =========================================
+3. COMPOSANTS (Cards, Boutons, etc.)
+   ========================================= */
+
+/* Cartes produits */
+.product-card {
+    transition: transform 0.3s ease, shadow 0.3s ease;
+    border-radius: 15px;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(106, 27, 154, 0.1) !important;
+}
+
+.price {
+    color: var(--price-pink);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Personnalisation du bouton d'envoi */
+.btn-primary-custom {
+    background-color: var(--dark-purple);
+    color: white;
+    border: none;
+    transition: opacity 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    background-color: #4a148c;
+    color: white;
+    opacity: 0.9;
+}
+
+/* =========================================
+4. PIED DE PAGE
+   ========================================= */
+footer {
+    background-color: white;
+    font-size: 0.9rem;
+}
