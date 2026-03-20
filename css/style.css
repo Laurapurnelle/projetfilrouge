@@ -1,5 +1,5 @@
 /* =========================================
-1. VARIABLES & POLICES
+   1. VARIABLES & POLICES
    ========================================= */
 :root {
     --rose-soft: #f8bbd0;
@@ -9,22 +9,38 @@
     --price-pink: #d81b60;
 }
 
+/* Importation de la police MonteCarlo depuis le dossier images */
+@font-face {
+    font-family: 'MonteCarlo';
+    src: url('../images/MonteCarlo-Regular.ttf') format('truetype');
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    background-color: #fdfbfd; /* Un blanc très légèrement rosé */
+    background-color: #ecd4e6;
+    /* Un blanc très légèrement rosé */
     color: #333;
     /* Correction pour la navbar fixed-top (évite que le menu cache le haut de la page) */
-    padding-top: 70px; 
+    padding-top: 70px;
 }
 
 /* =========================================
-2. TITRES & TEXTES
+   2. TITRES & TEXTES
    ========================================= */
-h1, h2, h3 {
-    font-weight: 600;
+h1,
+h2,
+h3,
+.navbar-brand {
+    font-family: 'MonteCarlo', cursive;
+    font-weight: normal;
     color: var(--dark-purple);
+}
+
+/* Astuce : Les polices manuscrites taillent souvent petit, on grossit un peu le logo */
+.navbar-brand {
+    font-size: 2.5rem;
 }
 
 .text-custom {
@@ -50,12 +66,12 @@ h1, h2, h3 {
 }
 
 /* =========================================
-3. COMPOSANTS (Cards, Boutons, etc.)
+   3. COMPOSANTS (Cards, Boutons, etc.)
    ========================================= */
 
 /* Cartes produits */
 .product-card {
-    transition: transform 0.3s ease, shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 15px;
 }
 
@@ -85,9 +101,22 @@ h1, h2, h3 {
 }
 
 /* =========================================
-4. PIED DE PAGE
+   4. PIED DE PAGE
    ========================================= */
 footer {
     background-color: white;
     font-size: 0.9rem;
 }
+
+/* =========================================
+   5. EFFETS GALERIE (Page À propos)
+   ========================================= */
+.hover-zoom {
+    transition: transform 0.3s ease;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.05);
+    /* Grossit l'image de 5% au survol */
+}
+
