@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,38 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
 
+    <style>
+        /* Ce style garantit que toutes les images de la galerie sont carrées et de même taille */
+        .gallery-img-container {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            /* Force le format carré */
+            object-fit: cover;
+            /* Remplit le carré sans déformer l'image */
+            border-radius: 8px;
+            /* Garde les coins arrondis comme vous l'aviez */
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-img-container:hover {
+            transform: scale(1.03);
+            /* Petit effet de zoom au survol */
+        }
+
+        /* Harmonise la hauteur des textes sous les images pour l'alignement */
+        .gallery-caption {
+            min-height: 40px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="index.html" style="color: #6a1b9a;">Laura's Shop</a>
+                <a class="navbar-brand fw-bold anchored-logo" href="index.html">Laura's Shop</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -35,22 +61,33 @@
 
         <section class="row align-items-center">
             <div class="col-md-5 mb-4">
-                <img src="images/Design sans titre (2).jpg" alt="Espace de travail créatif de Laura" class="img-fluid rounded shadow">
+                <img src="images/Design sans titre (2).jpg" alt="Espace de travail créatif de Laura"
+                    class="img-fluid rounded shadow">
             </div>
 
             <div class="col-md-7">
                 <article class="ps-md-4">
                     <p class="lead">Bienvenue dans mon univers créatif !</p>
-                    
-                    <p>Tout a commencé quand j'avais <strong>13 ou 14 ans</strong>. À l'époque, j'ai découvert le scrapbooking comme un simple passe-temps pour décorer mes albums photos et garder une trace de mes souvenirs d'adolescence.</p>
-                    
-                    <p>Ce qui n'était au départ qu'un mélange de papier, de colle et de paillettes est rapidement devenu une véritable passion qui ne m'a jamais quittée. Aujourd'hui, des années plus tard, je continue de créer avec le même enthousiasme.</p>
-                    
-                    <p><strong>Laura's Shop</strong> est né de l'envie de partager cet amour pour la papeterie et les créations manuelles. Mon style ? Un mélange de douceur et de peps, avec une préférence marquée pour les teintes <em>roses, mauves et des touches de bleu</em>.</p>
-                    
-                    <p>Chaque projet est pour moi une manière de raconter une histoire unique et de transformer de simples morceaux de papier en souvenirs précieux. À travers cette boutique, je souhaite vous inspirer à prendre le temps de créer, de coller et de personnaliser vos propres moments de vie.</p>
-                    
-                    <p>Que vous soyez débutant ou passionné comme moi, j'espère que vous trouverez ici de quoi nourrir votre créativité !</p>
+
+                    <p>Tout a commencé quand j'avais <strong>13 ou 14 ans</strong>. À l'époque, j'ai découvert le
+                        scrapbooking comme un simple passe-temps pour décorer mes albums photos et garder une trace de
+                        mes souvenirs d'adolescence.</p>
+
+                    <p>Ce qui n'était au départ qu'un mélange de papier, de colle et de paillettes est rapidement devenu
+                        une véritable passion qui ne m'a jamais quittée. Aujourd'hui, des années plus tard, je continue
+                        de créer avec le même enthousiasme.</p>
+
+                    <p><strong>Laura's Shop</strong> est né de l'envie de partager cet amour pour la papeterie et les
+                        créations manuelles. Mon style ? Un mélange de douceur et de peps, avec une préférence marquée
+                        pour les teintes <em>roses, mauves et des touches de bleu</em>.</p>
+
+                    <p>Chaque projet est pour moi une manière de raconter une histoire unique et de transformer de
+                        simples morceaux de papier en souvenirs précieux. À travers cette boutique, je souhaite vous
+                        inspirer à prendre le temps de créer, de coller et de personnaliser vos propres moments de vie.
+                    </p>
+
+                    <p>Que vous soyez débutant ou passionné comme moi, j'espère que vous trouverez ici de quoi nourrir
+                        votre créativité !</p>
                 </article>
             </div>
         </section>
@@ -60,53 +97,41 @@
             <p class="text-center text-muted mb-5">Découvrez mon univers. Cliquez sur une image pour l'agrandir.</p>
 
             <div class="row justify-content-center g-4">
-                
+
                 <div class="col-6 col-md-4 text-center">
-                    <img src="images/1.jpg" alt="Page de garde Octobre" 
-                         class="img-fluid rounded shadow-sm hover-zoom mb-2" 
-                         data-bs-toggle="modal" data-bs-target="#modalGalerie1" 
-                         style="cursor: pointer; object-fit: cover; aspect-ratio: 1/1;">
-                    <p class="text-muted small">Page de garde Octobre : Halloween</p>
+                    <img src="images/1.jpg" alt="Page de garde Octobre" class="gallery-img-container shadow-sm"
+                        data-bs-toggle="modal" data-bs-target="#modalGalerie1" style="cursor: pointer;">
+                    <p class="text-muted small gallery-caption">Page de garde Octobre : Halloween</p>
                 </div>
 
                 <div class="col-6 col-md-4 text-center">
-                    <img src="images/2.jpg" alt="Junk journal petit déjeuner" 
-                         class="img-fluid rounded shadow-sm hover-zoom mb-2" 
-                         data-bs-toggle="modal" data-bs-target="#modalGalerie2" 
-                         style="cursor: pointer; object-fit: cover; aspect-ratio: 1/1;">
-                    <p class="text-muted small">Junk journal : Petit déjeuner</p>
+                    <img src="images/2.jpg" alt="Junk journal petit déjeuner" class="gallery-img-container shadow-sm"
+                        data-bs-toggle="modal" data-bs-target="#modalGalerie2" style="cursor: pointer;">
+                    <p class="text-muted small gallery-caption">Junk journal : Petit déjeuner</p>
                 </div>
 
                 <div class="col-6 col-md-4 text-center">
-                    <img src="images/3.jpg" alt="Collage rose et mauve" 
-                         class="img-fluid rounded shadow-sm hover-zoom mb-2" 
-                         data-bs-toggle="modal" data-bs-target="#modalGalerie3" 
-                         style="cursor: pointer; object-fit: cover; aspect-ratio: 1/1;">
-                    <p class="text-muted small">Collage dans les tons rose/mauve</p>
+                    <img src="images/3.jpg" alt="Collage rose et mauve" class="gallery-img-container shadow-sm"
+                        data-bs-toggle="modal" data-bs-target="#modalGalerie3" style="cursor: pointer;">
+                    <p class="text-muted small gallery-caption">Collage dans les tons rose/mauve</p>
                 </div>
 
                 <div class="col-6 col-md-4 text-center">
-                    <img src="images/4.jpg" alt="Page de garde Mai" 
-                         class="img-fluid rounded shadow-sm hover-zoom mb-2" 
-                         data-bs-toggle="modal" data-bs-target="#modalGalerie4" 
-                         style="cursor: pointer; object-fit: cover; aspect-ratio: 1/1;">
-                    <p class="text-muted small">Page de garde Mai : Les abeilles</p>
+                    <img src="images/4.jpg" alt="Page de garde Mai" class="gallery-img-container shadow-sm"
+                        data-bs-toggle="modal" data-bs-target="#modalGalerie4" style="cursor: pointer;">
+                    <p class="text-muted small gallery-caption">Page de garde Mai : Les abeilles</p>
                 </div>
 
                 <div class="col-6 col-md-4 text-center">
-                    <img src="images/5.jpg" alt="Junk journal remise de diplôme" 
-                         class="img-fluid rounded shadow-sm hover-zoom mb-2" 
-                         data-bs-toggle="modal" data-bs-target="#modalGalerie5" 
-                         style="cursor: pointer; object-fit: cover; aspect-ratio: 1/1;">
-                    <p class="text-muted small">Junk journal : Remise de diplôme de ma meilleure amie</p>
+                    <img src="images/5.jpg" alt="Junk journal remise de diplôme" class="gallery-img-container shadow-sm"
+                        data-bs-toggle="modal" data-bs-target="#modalGalerie5" style="cursor: pointer;">
+                    <p class="text-muted small gallery-caption">Junk journal : Remise de diplôme</p>
                 </div>
 
                 <div class="col-6 col-md-4 text-center">
-                    <img src="images/6.jpg" alt="Page de garde Janvier" 
-                         class="img-fluid rounded shadow-sm hover-zoom mb-2" 
-                         data-bs-toggle="modal" data-bs-target="#modalGalerie6" 
-                         style="cursor: pointer; object-fit: cover; aspect-ratio: 1/1;">
-                    <p class="text-muted small">Page de garde Janvier : Tirage de carte de tarot</p>
+                    <img src="images/6.jpg" alt="Page de garde Janvier" class="gallery-img-container shadow-sm"
+                        data-bs-toggle="modal" data-bs-target="#modalGalerie6" style="cursor: pointer;">
+                    <p class="text-muted small gallery-caption">Page de garde Janvier : Tarot</p>
                 </div>
 
             </div>
@@ -116,7 +141,8 @@
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-transparent border-0">
                     <div class="modal-header border-0 justify-content-end pb-0">
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Fermer"></button>
                     </div>
                     <div class="modal-body text-center pt-0">
                         <img src="images/1.jpg" alt="Agrandissement 1" class="img-fluid rounded shadow">
@@ -129,7 +155,8 @@
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-transparent border-0">
                     <div class="modal-header border-0 justify-content-end pb-0">
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Fermer"></button>
                     </div>
                     <div class="modal-body text-center pt-0">
                         <img src="images/2.jpg" alt="Agrandissement 2" class="img-fluid rounded shadow">
@@ -142,7 +169,8 @@
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-transparent border-0">
                     <div class="modal-header border-0 justify-content-end pb-0">
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Fermer"></button>
                     </div>
                     <div class="modal-body text-center pt-0">
                         <img src="images/3.jpg" alt="Agrandissement 3" class="img-fluid rounded shadow">
@@ -155,7 +183,8 @@
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-transparent border-0">
                     <div class="modal-header border-0 justify-content-end pb-0">
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Fermer"></button>
                     </div>
                     <div class="modal-body text-center pt-0">
                         <img src="images/4.jpg" alt="Agrandissement 4" class="img-fluid rounded shadow">
@@ -168,7 +197,8 @@
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-transparent border-0">
                     <div class="modal-header border-0 justify-content-end pb-0">
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Fermer"></button>
                     </div>
                     <div class="modal-body text-center pt-0">
                         <img src="images/5.jpg" alt="Agrandissement 5" class="img-fluid rounded shadow">
@@ -181,7 +211,8 @@
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content bg-transparent border-0">
                     <div class="modal-header border-0 justify-content-end pb-0">
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Fermer"></button>
                     </div>
                     <div class="modal-body text-center pt-0">
                         <img src="images/6.jpg" alt="Agrandissement 6" class="img-fluid rounded shadow">
